@@ -17,6 +17,7 @@ It is important that there is always a new line mark at the end.
 The application was developed using the C# programming language along with the main Windows.Forms library. It was programmed under Microsoft. NET Framework version 4.0.30319 with default libraries.
 ## Compilation
 An example way to compile an application is to use CMD command line commands:
+
 Application without console
 ```bat
 csc.exe /t:winexe /out:"Inventory Management System.exe" main.cs
