@@ -12,7 +12,7 @@ On the other hand, for the completed subject:
 ```txt
 Pen;Pen-producer;123;456-456;Describe the pen... ;1000;13.5 x 0.5;0.36;
 ```
-It is important that there is always a new line mark at the end.
+It is important that there is always a new line mark at the end. In texarea item description new line environment enter is char '0160' is automated conventer in to side.
 ## Description of technologies used
 The application was developed using the C# programming language along with the main Windows.Forms library. It was programmed under Microsoft. NET Framework version 4.0.30319 with default libraries.
 ## Compilation
