@@ -54,6 +54,94 @@ public class Form1 : Form{
   public Button button_save_new_item = new Button();
   public Button button_cancel_new_item = new Button();
 
+  // Dictionary EN
+  static Dictionary<string, string> dictionary = new Dictionary<string, string>(){
+    {"0", ""},
+    {"1", "Inventory Management System"},
+    {"2", "I.M.System"},
+    {"3", "Search"},
+    {"4", "(c)"},
+    {"5", "Database"},
+    {"6", "Add category"},
+    {"7", "Edit name"},
+    {"8", "Delete category"},
+    {"9", "Save"},
+    {"10", "Cancel"},
+    {"11", "Add item"},
+    {"12", "Edit item"},
+    {"13", "Delete item"},
+    {"14", "Item overview"},
+    {"15", "Adding an item"},
+    {"16", "Editing an item"},
+    {"17", "Attention!"},
+    {"18", "Delete item no: "},
+    {"19", "No item selected."},
+    {"20", "No"},
+    {"21", "Name"},
+    {"22", "Producer"},
+    {"23", "Serial No"},
+    {"24", "Model No"},
+    {"25", "Description"},
+    {"26", "Quantity"},
+    {"27", "Dimensions"},
+    {"28", "Weight"},
+    {"29", "No"},
+    {"30", "Name"},
+    {"31", "File"},
+    {"32", "No category selected."},
+    {"33", "Delete a category: "},
+    {"34", "Edit category name, enter a new name."},
+    {"35", "Adding a new category, enter a name."},
+    {"36", "Category created successfully."},
+    {"37", "There is already such a category."},
+    {"38", "Not allowed category names."},
+    {"39", "The renaming of the category was successful."}
+  };
+
+  // Dictionary PL
+  // static Dictionary<string, string> dictionary = new Dictionary<string, string>(){
+  //   {"0", ""},
+  //   {"1", "Inventory Management System"},
+  //   {"2", "I.M.System"},
+  //   {"3", "Szukaj"},
+  //   {"4", "(c)"},
+  //   {"5", "Baza danych"},
+  //   {"6", "Dodaj kategorię"},
+  //   {"7", "Edytuj nazwę"},
+  //   {"8", "Usuń kategorię"},
+  //   {"9", "Zapisz"},
+  //   {"10", "Anuluj"},
+  //   {"11", "Dodaj element"},
+  //   {"12", "Edytuj element"},
+  //   {"13", "Usuń element"},
+  //   {"14", "Przegląd przedmiotu"},
+  //   {"15", "Dodanie przedmiotu"},
+  //   {"16", "Edycja przedmiotu"},
+  //   {"17", "Uwaga!"},
+  //   {"18", "Usunąć przedmiot nr: "},
+  //   {"19", "Nie wybrano przedmiotu."},
+  //   {"20", "Nr"},
+  //   {"21", "Nazwa"},
+  //   {"22", "Producent"},
+  //   {"23", "Nr seryjny"},
+  //   {"24", "Nr modelu"},
+  //   {"25", "Opis"},
+  //   {"26", "Ilość"},
+  //   {"27", "Wymiary"},
+  //   {"28", "Waga"},
+  //   {"29", "Nr"},
+  //   {"30", "Nazwa"},
+  //   {"31", "Plik"},
+  //   {"32", "Nie wybrano kategorii."},
+  //   {"33", "Usunąć kategorię: "},
+  //   {"34", "Edycja nazwy kategorii, podaj nową nazwę."},
+  //   {"35", "Dodawanie nowej kategorii, podaj nazwę."},
+  //   {"36", "Kategoria utworzona pomyślnie."},
+  //   {"37", "Istieje już taka kategoria."},
+  //   {"38", "Niedozwolone znaki nazwy kategorii."},
+  //   {"39", "Zmiana nazwy kategorii przebiegła pomyślnie."}
+  // };
+
   // Variable declaration
   public string category_search = "";
   public string selected_category_file = "";
@@ -65,7 +153,7 @@ public class Form1 : Form{
   public Form1(){
     // Window setting
     this.Size = new Size(1280,720);
-    this.Text = "Inventory Management System";
+    this.Text = dictionary["1"];
     this.MaximizeBox = false;
     this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
@@ -79,7 +167,7 @@ public class Form1 : Form{
     // Label app Name
     label_aplication_name.Size = new Size(300,50);
     label_aplication_name.Location = new Point(20,10);
-    label_aplication_name.Text = "I.M.System";
+    label_aplication_name.Text = dictionary["2"];
     label_aplication_name.Font = new Font("Arial", 30, FontStyle.Bold);
     main_panel.Controls.Add(label_aplication_name);
 
@@ -92,21 +180,21 @@ public class Form1 : Form{
     // Button button_search_category_table declaration
     button_search_category_table.Size = new Size(50,24);
     button_search_category_table.Location = new Point(280,76);
-    button_search_category_table.Text = "Search";
+    button_search_category_table.Text = dictionary["3"];
     button_search_category_table.Click += new EventHandler(button_search_category_table_Click);
     main_panel.Controls.Add(button_search_category_table);
 
     // Button button_clear_search_category_table declaration
     button_clear_search_category_table.Size = new Size(30,24);
     button_clear_search_category_table.Location = new Point(331,76);
-    button_clear_search_category_table.Text = "(c)";
+    button_clear_search_category_table.Text = dictionary["4"];
     button_clear_search_category_table.Click += new EventHandler(button_clear_search_category_table_Click);
     main_panel.Controls.Add(button_clear_search_category_table);
 
     // Category table declaration
     label_category_table.Size = new Size(80,20);
     label_category_table.Location = new Point(20,80);
-    label_category_table.Text = "Database";
+    label_category_table.Text = dictionary["5"];
     main_panel.Controls.Add(label_category_table);
     category_table_declaration(main_panel);
 
@@ -116,21 +204,21 @@ public class Form1 : Form{
     // Button Category
     button_add_category.Size = new Size(100,24);
     button_add_category.Location = new Point(9,505);
-    button_add_category.Text = "Add category";
+    button_add_category.Text = dictionary["6"];
     button_add_category.Click += new EventHandler(button_add_category_Click);
     button_add_category.Enabled = true;
     main_panel.Controls.Add(button_add_category);
 
     button_edit_category.Size = new Size(100,24);
     button_edit_category.Location = new Point(135,505);
-    button_edit_category.Text = "Edit name";
+    button_edit_category.Text = dictionary["7"];
     button_edit_category.Click += new EventHandler(button_edit_category_Click);
     button_edit_category.Enabled = false;
     main_panel.Controls.Add(button_edit_category);
 
     button_delete_select_category.Size = new Size(100,24);
     button_delete_select_category.Location = new Point(261,505);
-    button_delete_select_category.Text = "Delete category";
+    button_delete_select_category.Text = dictionary["8"];
     button_delete_select_category.Click += new EventHandler(button_delete_select_category_Click);
     button_delete_select_category.Enabled = false;
     main_panel.Controls.Add(button_delete_select_category);
@@ -150,14 +238,14 @@ public class Form1 : Form{
 
     button_save_add_category.Size = new Size(100,24);
     button_save_add_category.Location = new Point(79,607);
-    button_save_add_category.Text = "Save";
+    button_save_add_category.Text = dictionary["9"];
     button_save_add_category.Enabled = false;
     button_save_add_category.Click += new EventHandler(button_save_add_category_Click);
     main_panel.Controls.Add(button_save_add_category);
 
     button_cancel_add_category.Size = new Size(100,24);
     button_cancel_add_category.Location = new Point(181,607);
-    button_cancel_add_category.Text = "Cancel";
+    button_cancel_add_category.Text = dictionary["10"];
     button_cancel_add_category.Enabled = false;
     button_cancel_add_category.Click += new EventHandler(button_cancel_add_category_Click);
     main_panel.Controls.Add(button_cancel_add_category);
@@ -173,7 +261,7 @@ public class Form1 : Form{
     // Button button_search_item_table declaration
     button_search_item_table.Size = new Size(50,24);
     button_search_item_table.Location = new Point(1185,5);
-    button_search_item_table.Text = "Search";
+    button_search_item_table.Text = dictionary["3"];
     button_search_item_table.Click += new EventHandler(button_search_item_table_Click);
     button_search_item_table.Enabled = false;
     main_panel.Controls.Add(button_search_item_table);
@@ -181,7 +269,7 @@ public class Form1 : Form{
     // Button button_clear_search_item_table declaration
     button_clear_search_item_table.Size = new Size(30,24);
     button_clear_search_item_table.Location = new Point(1236,5);
-    button_clear_search_item_table.Text = "(c)";
+    button_clear_search_item_table.Text = dictionary["4"];
     button_clear_search_item_table.Click += new EventHandler(button_clear_search_item_table_Click);
     button_clear_search_item_table.Enabled = false;
     main_panel.Controls.Add(button_clear_search_item_table);
@@ -200,7 +288,7 @@ public class Form1 : Form{
     // Button add item (450,478)
     button_add_item.Size = new Size(100,24);
     button_add_item.Location = new Point(1166,477);
-    button_add_item.Text = "Add item";
+    button_add_item.Text = dictionary["11"];
     button_add_item.Click += new EventHandler(button_add_item_Click);
     button_add_item.Enabled = false;
     main_panel.Controls.Add(button_add_item);
@@ -208,7 +296,7 @@ public class Form1 : Form{
     // Button edit select item
     button_edit_select_item.Size = new Size(100,24);
     button_edit_select_item.Location = new Point(1166,506);
-    button_edit_select_item.Text = "Edit item";
+    button_edit_select_item.Text = dictionary["12"];
     button_edit_select_item.Click += new EventHandler(button_edit_select_item_Click);
     button_edit_select_item.Enabled = false;
     main_panel.Controls.Add(button_edit_select_item);
@@ -216,21 +304,21 @@ public class Form1 : Form{
     // Button delete select item
     button_delete_select_item.Size = new Size(100,24);
     button_delete_select_item.Location = new Point(1166,535);
-    button_delete_select_item.Text = "Delete item";
+    button_delete_select_item.Text = dictionary["13"];
     button_delete_select_item.Click += new EventHandler(button_delete_select_item_Click);
     button_delete_select_item.Enabled = false;
     main_panel.Controls.Add(button_delete_select_item);
 
     button_save_new_item.Size = new Size(100,24);
     button_save_new_item.Location = new Point(1166,626);
-    button_save_new_item.Text = "Save";
+    button_save_new_item.Text = dictionary["9"];
     button_save_new_item.Click += new EventHandler(button_save_new_item_Click);
     button_save_new_item.Enabled = false;
     main_panel.Controls.Add(button_save_new_item);
 
     button_cancel_new_item.Size = new Size(100,24);
-    button_cancel_new_item.Location = new Point(1166,655); //602
-    button_cancel_new_item.Text = "Cancel";
+    button_cancel_new_item.Location = new Point(1166,655);
+    button_cancel_new_item.Text = dictionary["10"];
     button_cancel_new_item.Click += new EventHandler(button_cancel_new_item_Click);
     button_cancel_new_item.Enabled = false;
     main_panel.Controls.Add(button_cancel_new_item);
@@ -238,7 +326,7 @@ public class Form1 : Form{
 
   // button_save_new_item action
   private void button_cancel_new_item_Click(object sender, EventArgs e){
-    label_item_action_name.Text = "Item overview";
+    label_item_action_name.Text = dictionary["14"];
     button_add_category.Enabled = true;
     button_edit_category.Enabled = true;
     button_delete_select_category.Enabled = true;
@@ -261,12 +349,11 @@ public class Form1 : Form{
     disable_editing_item_textBox();
     button_save_new_item.Enabled = false;
     button_cancel_new_item.Enabled = false;
-
   }
 
   // button_save_new_item action
   private void button_save_new_item_Click(object sender, EventArgs e){
-    label_item_action_name.Text = "Item overview";
+    label_item_action_name.Text = dictionary["14"];
     button_add_category.Enabled = true;
     button_edit_category.Enabled = true;
     button_delete_select_category.Enabled = true;
@@ -317,9 +404,7 @@ public class Form1 : Form{
       textBox_item_Producer.Text.ToString().Replace(';', ',') + ";" +
       textBox_item_Serial_number.Text.ToString().Replace(';', ',') + ";" +
       textBox_item_Model_number.Text.ToString().Replace(';', ',') + ";" +
-
       textBox_item_Description.Text.ToString().Replace(System.Environment.NewLine," ").Replace(';', ',') + ";" +
-
       textBox_item_Count.Text.ToString().Replace(';', ',') + ";" +
       textBox_item_Dimensions.Text.ToString().Replace(';', ',') + ";" +
       textBox_item_Weight.Text.ToString().Replace(';', ',') + ";\n"
@@ -332,7 +417,7 @@ public class Form1 : Form{
   // button_add_item action
   private void button_add_item_Click(object sender, EventArgs e){
     change_item_status = "add";
-    label_item_action_name.Text = "Adding an item";
+    label_item_action_name.Text = dictionary["15"];
     clear_editing_item_textBox();
     button_add_category.Enabled = false;
     button_edit_category.Enabled = false;
@@ -351,13 +436,12 @@ public class Form1 : Form{
     enable_editing_item_textBox();
     button_save_new_item.Enabled = true;
     button_cancel_new_item.Enabled = true;
-
   }
 
   // button_edit_item action
   private void button_edit_select_item_Click(object sender, EventArgs e){
     change_item_status = "edit";
-    label_item_action_name.Text = "Editing an item";
+    label_item_action_name.Text = dictionary["16"];
     button_add_category.Enabled = false;
     button_edit_category.Enabled = false;
     button_delete_select_category.Enabled = false;
@@ -375,7 +459,6 @@ public class Form1 : Form{
     enable_editing_item_textBox();
     button_save_new_item.Enabled = true;
     button_cancel_new_item.Enabled = true;
-
   }
 
   private void disable_editing_item_textBox(){
@@ -416,7 +499,7 @@ public class Form1 : Form{
 
   // button_delete_select_item action
   private void button_delete_select_item_Click(object sender, EventArgs e){
-    DialogResult dr = MessageBox.Show("Delete item no: " + item_table.Rows[item_table.CurrentCell.RowIndex].Cells[0].Value.ToString() + "?", "Attention!", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
+    DialogResult dr = MessageBox.Show(dictionary["18"] + item_table.Rows[item_table.CurrentCell.RowIndex].Cells[0].Value.ToString() + "?", dictionary["17"], MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
     if (dr == DialogResult.Yes)
     {
       int selected_row = int.Parse(item_table.Rows[item_table.CurrentCell.RowIndex].Cells[0].Value.ToString()) - 1;
@@ -499,7 +582,7 @@ public class Form1 : Form{
       button_edit_select_item.Enabled = true;
       button_delete_select_item.Enabled = true;
     }catch (System.Exception){
-       MessageBox.Show("No item selected.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+       MessageBox.Show(dictionary["19"], dictionary["17"], MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
     }
   }
 
@@ -547,20 +630,20 @@ public class Form1 : Form{
     item_table.RowHeadersVisible = false;
     item_table.AllowUserToAddRows = false;
     // Column setting
-    item_table.Columns[0].Name = "No";
-    item_table.Columns[1].Name = "Name";
-    item_table.Columns[2].Name = "Producer";
-    item_table.Columns[3].Name = "Serial no";
-    item_table.Columns[4].Name = "Model No";
-    item_table.Columns[5].Name = "Description";
-    item_table.Columns[6].Name = "Quantity";
-    item_table.Columns[7].Name = "Dimensions";
-    item_table.Columns[8].Name = "Weight";
+    item_table.Columns[0].Name = dictionary["20"];
+    item_table.Columns[1].Name = dictionary["21"];
+    item_table.Columns[2].Name = dictionary["22"];
+    item_table.Columns[3].Name = dictionary["23"];
+    item_table.Columns[4].Name = dictionary["24"];
+    item_table.Columns[5].Name = dictionary["25"];
+    item_table.Columns[6].Name = dictionary["26"];
+    item_table.Columns[7].Name = dictionary["27"];
+    item_table.Columns[8].Name = dictionary["28"];
     item_table.Columns[0].DisplayIndex = 0;
     item_table.Columns[1].DisplayIndex = 1;
     item_table.Columns[2].DisplayIndex = 2;
-    item_table.Columns[3].DisplayIndex = 3;
-    item_table.Columns[4].DisplayIndex = 4;
+    item_table.Columns[3].DisplayIndex = 4;
+    item_table.Columns[4].DisplayIndex = 3;
     item_table.Columns[5].DisplayIndex = 8;
     item_table.Columns[6].DisplayIndex = 5;
     item_table.Columns[7].DisplayIndex = 6;
@@ -609,9 +692,9 @@ public class Form1 : Form{
     category_table.RowHeadersVisible = false;
     category_table.AllowUserToAddRows = false;
     // Column setting
-    category_table.Columns[0].Name = "No";
-    category_table.Columns[1].Name = "Name";
-    category_table.Columns[2].Name = "File";
+    category_table.Columns[0].Name = dictionary["29"];
+    category_table.Columns[1].Name = dictionary["30"];
+    category_table.Columns[2].Name = dictionary["31"];
     category_table.Columns[2].Visible = false;
     category_table.Columns[0].DisplayIndex = 0;
     category_table.Columns[1].DisplayIndex = 1;
@@ -651,13 +734,13 @@ public class Form1 : Form{
       button_edit_category.Enabled = true;
       button_delete_select_category.Enabled = true;
     }catch (System.Exception){
-       MessageBox.Show("No category selected.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+       MessageBox.Show(dictionary["32"], dictionary["17"], MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
     }
   }
 
   private void button_delete_select_category_Click(object sender, EventArgs e){
     if(File.Exists(@"ims-data\" + category_table.Rows[category_table.CurrentCell.RowIndex].Cells[2].Value.ToString())){
-      DialogResult dr = MessageBox.Show("Delete a category: "+category_table.Rows[category_table.CurrentCell.RowIndex].Cells[1].Value.ToString()+"?", "Attention!", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
+      DialogResult dr = MessageBox.Show(dictionary["33"]+category_table.Rows[category_table.CurrentCell.RowIndex].Cells[1].Value.ToString()+"?", dictionary["17"], MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
       if (dr == DialogResult.Yes)
       {
         File.Delete(@"ims-data\" + category_table.Rows[category_table.CurrentCell.RowIndex].Cells[2].Value.ToString());
@@ -678,7 +761,7 @@ public class Form1 : Form{
         button_delete_select_category.Enabled = false;
       }
     }else{
-      MessageBox.Show("No category selected.");
+      MessageBox.Show(dictionary["32"]);
     }
   }
 
@@ -703,7 +786,7 @@ public class Form1 : Form{
     if(label_item_table.Text != ""){
       item_table.Enabled = false;
     }
-    label_category_action_name.Text = "Edit category name, enter a new name.";
+    label_category_action_name.Text = dictionary["34"];
     textBox_add_category_name.Text = label_item_table.Text;
   }
 
@@ -728,7 +811,7 @@ public class Form1 : Form{
     if(label_item_table.Text != ""){
       item_table.Enabled = false;
     }
-    label_category_action_name.Text = "Adding a new category, enter a name.";
+    label_category_action_name.Text = dictionary["35"];
 
   }
 
@@ -737,7 +820,7 @@ public class Form1 : Form{
       try{
         if(!File.Exists(@"ims-data\" + textBox_add_category_name.Text.ToString() + ".imsdata")){
           File.Create(@"ims-data\" + textBox_add_category_name.Text.ToString() + ".imsdata").Dispose();
-          MessageBox.Show("Category created successfully.");
+          MessageBox.Show(dictionary["36"]);
           label_category_action_name.Text = "";
           textBox_add_category_name.Text = "";
           textBox_add_category_name.ReadOnly = true;
@@ -766,18 +849,18 @@ public class Form1 : Form{
           button_clear_search_category_table.Enabled = true;
           fill_table_of_file_list();
         }else{
-          MessageBox.Show("There is already such a category.");
+          MessageBox.Show(dictionary["37"]);
           fill_table_of_file_list();
         }
       }catch (System.Exception){
-         MessageBox.Show("Not allowed category names.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+         MessageBox.Show(dictionary["38"], dictionary["17"], MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
       }
     }
     if(change_category_status == "edit"){
       try{
         if(!File.Exists(@"ims-data\" + textBox_add_category_name.Text.ToString() + ".imsdata")){
           System.IO.File.Move(@"ims-data\" + category_table.Rows[category_table.CurrentCell.RowIndex].Cells[2].Value.ToString(), @"ims-data\" + textBox_add_category_name.Text.ToString() + ".imsdata");
-          MessageBox.Show("The renaming of the category was successful.");
+          MessageBox.Show(dictionary["39"]);
           label_category_action_name.Text = "";
           textBox_add_category_name.Text = "";
           textBox_add_category_name.ReadOnly = true;
@@ -820,10 +903,10 @@ public class Form1 : Form{
           button_edit_category.Enabled = false;
           button_delete_select_category.Enabled = false;
         }else{
-          MessageBox.Show("There is already such a category.");
+          MessageBox.Show(dictionary["37"]);
         }
       }catch (System.Exception){
-         MessageBox.Show("Not allowed category names.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+         MessageBox.Show(dictionary["38"], dictionary["17"], MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
       }
     }
   }
@@ -860,44 +943,44 @@ public class Form1 : Form{
     // Labels
     label_item_action_name.Size = new Size(300,20);
     label_item_action_name.Location = new Point(380,456);
-    label_item_action_name.Text = "Item overview";
+    label_item_action_name.Text = dictionary["14"];
     label_item_action_name.Font = new Font("Arial", 10, FontStyle.Bold);
     main_panel.Controls.Add(label_item_action_name);
     label_item_ID.Size = new Size(70,20);
     label_item_ID.Location = new Point(380,480);
-    label_item_ID.Text = "No";
+    label_item_ID.Text = dictionary["20"];
     main_panel.Controls.Add(label_item_ID);
     label_item_Name.Size = new Size(70,20);
     label_item_Name.Location = new Point(380,504);
-    label_item_Name.Text = "Name";
+    label_item_Name.Text = dictionary["21"];
     main_panel.Controls.Add(label_item_Name);
     label_item_Producer.Size = new Size(70,20);
     label_item_Producer.Location = new Point(380,528);
-    label_item_Producer.Text = "Producer";
+    label_item_Producer.Text = dictionary["22"];
     main_panel.Controls.Add(label_item_Producer);
-    label_item_Serial_number.Size = new Size(70,20);
-    label_item_Serial_number.Location = new Point(380,552);
-    label_item_Serial_number.Text = "Serial no";
-    main_panel.Controls.Add(label_item_Serial_number);
     label_item_Model_number.Size = new Size(70,20);
-    label_item_Model_number.Location = new Point(380,576);
-    label_item_Model_number.Text = "Model No";
+    label_item_Model_number.Location = new Point(380,552);
+    label_item_Model_number.Text = dictionary["24"];
     main_panel.Controls.Add(label_item_Model_number);
+    label_item_Serial_number.Size = new Size(70,20);
+    label_item_Serial_number.Location = new Point(380,576);
+    label_item_Serial_number.Text = dictionary["23"];
+    main_panel.Controls.Add(label_item_Serial_number);
     label_item_Count.Size = new Size(70,20);
     label_item_Count.Location = new Point(380,600);
-    label_item_Count.Text = "Quantity";
+    label_item_Count.Text = dictionary["26"];
     main_panel.Controls.Add(label_item_Count);
     label_item_Dimensions.Size = new Size(70,20);
     label_item_Dimensions.Location = new Point(380,624);
-    label_item_Dimensions.Text = "Dimensions";
+    label_item_Dimensions.Text = dictionary["27"];
     main_panel.Controls.Add(label_item_Dimensions);
     label_item_Weight.Size = new Size(70,20);
     label_item_Weight.Location = new Point(380,650);
-    label_item_Weight.Text = "Weight";
+    label_item_Weight.Text = dictionary["28"];
     main_panel.Controls.Add(label_item_Weight);
     label_item_Description.Size = new Size(80,20);
     label_item_Description.Location = new Point(780,456);
-    label_item_Description.Text = "Description";
+    label_item_Description.Text = dictionary["25"];
     main_panel.Controls.Add(label_item_Description);
     // TextBox
     textBox_item_ID.Size = new Size(300,24);
@@ -915,16 +998,16 @@ public class Form1 : Form{
     textBox_item_Producer.Text = "";
     textBox_item_Producer.ReadOnly = true;
     main_panel.Controls.Add(textBox_item_Producer);
-    textBox_item_Serial_number.Size = new Size(300,24);
-    textBox_item_Serial_number.Location = new Point(450,550);
-    textBox_item_Serial_number.Text = "";
-    textBox_item_Serial_number.ReadOnly = true;
-    main_panel.Controls.Add(textBox_item_Serial_number);
     textBox_item_Model_number.Size = new Size(300,24);
-    textBox_item_Model_number.Location = new Point(450,574);
+    textBox_item_Model_number.Location = new Point(450,550);
     textBox_item_Model_number.Text = "";
     textBox_item_Model_number.ReadOnly = true;
     main_panel.Controls.Add(textBox_item_Model_number);
+    textBox_item_Serial_number.Size = new Size(300,24);
+    textBox_item_Serial_number.Location = new Point(450,574);
+    textBox_item_Serial_number.Text = "";
+    textBox_item_Serial_number.ReadOnly = true;
+    main_panel.Controls.Add(textBox_item_Serial_number);
     textBox_item_Count.Size = new Size(300,24);
     textBox_item_Count.Location = new Point(450,598);
     textBox_item_Count.Text = "";
@@ -955,5 +1038,4 @@ public class Form1 : Form{
     Application.EnableVisualStyles();
     Application.Run(new Form1());
   }
-
 }
