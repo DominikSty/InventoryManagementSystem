@@ -318,7 +318,7 @@ public class Form1 : Form{
       textBox_item_Serial_number.Text.ToString().Replace(';', ',') + ";" +
       textBox_item_Model_number.Text.ToString().Replace(';', ',') + ";" +
 
-      textBox_item_Description.Text.ToString().Replace(System.Environment.NewLine," ").Replace(';', ',') + ";" +
+      textBox_item_Description.Text.ToString().Replace(System.Environment.NewLine," ").Replace(';', ',') + ";" +
 
       textBox_item_Count.Text.ToString().Replace(';', ',') + ";" +
       textBox_item_Dimensions.Text.ToString().Replace(';', ',') + ";" +
@@ -492,10 +492,10 @@ public class Form1 : Form{
       textBox_item_Producer.Text =      item_table.Rows[item_table.CurrentCell.RowIndex].Cells[2].Value.ToString();
       textBox_item_Serial_number.Text = item_table.Rows[item_table.CurrentCell.RowIndex].Cells[3].Value.ToString();
       textBox_item_Model_number.Text =  item_table.Rows[item_table.CurrentCell.RowIndex].Cells[4].Value.ToString();
-      textBox_item_Description.Text =   item_table.Rows[item_table.CurrentCell.RowIndex].Cells[5].Value.ToString();
       textBox_item_Count.Text =         item_table.Rows[item_table.CurrentCell.RowIndex].Cells[6].Value.ToString();
       textBox_item_Dimensions.Text =    item_table.Rows[item_table.CurrentCell.RowIndex].Cells[7].Value.ToString();
       textBox_item_Weight.Text =        item_table.Rows[item_table.CurrentCell.RowIndex].Cells[8].Value.ToString();
+      textBox_item_Description.Text =   item_table.Rows[item_table.CurrentCell.RowIndex].Cells[5].Value.ToString().Replace(" ",System.Environment.NewLine);
       button_edit_select_item.Enabled = true;
       button_delete_select_item.Enabled = true;
     }catch (System.Exception){
