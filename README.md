@@ -10,7 +10,7 @@ These are the previously mentioned files with the extension ".imsdata" in the fo
 ```
 On the other hand, for the completed subject:
 ```txt
-Pen;Pen-producer;123;456-456;Describe the pen... ;1000;13.5 x 0.5;0.36;
+name;producer;serial no;model no;Description ...;quantity;dimensions;weight;
 ```
 It is important that there is always a new line mark at the end. In texarea item description new line environment enter is char '0160' is automated conventer in to side.
 ## Description of technologies used
